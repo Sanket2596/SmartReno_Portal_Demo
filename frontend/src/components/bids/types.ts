@@ -1,5 +1,3 @@
-"use client";
-
 export type BidStatus =
   | "shortlisted"
   | "declined"
