@@ -14,6 +14,7 @@ import {
 import { LayoutGroup, motion } from "framer-motion";
 import type { Transition } from "framer-motion";
 
+import { NotificationsModal } from "@/components/dashboard/notifications-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -71,6 +72,15 @@ const navGlowRing: Record<string, string> = {
 
 export function TopHeader() {
   const [activeNav, setActiveNav] = React.useState("dashboard");
+  const [notificationsOpen, setNotificationsOpen] = React.useState(false);
+
+  const openNotifications = React.useCallback(() => {
+    setNotificationsOpen(true);
+  }, []);
+
+  const closeNotifications = React.useCallback(() => {
+    setNotificationsOpen(false);
+  }, []);
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -115,7 +125,7 @@ export function TopHeader() {
                           layoutId="nav-highlight"
                           transition={navHighlightTransition}
                           className={cn(
-                            "absolute inset-0 -z-[1] rounded-full border border-border/70 backdrop-blur-sm",
+                            "absolute inset-0 -z-1 rounded-full border border-border/70 backdrop-blur-sm",
                             navHighlightBackground[item.id] ?? "bg-primary/10",
                           )}
                         />
@@ -123,7 +133,7 @@ export function TopHeader() {
                           layoutId="nav-glow"
                           transition={navHighlightTransition}
                           className={cn(
-                            "pointer-events-none absolute inset-0 -z-[2] rounded-full blur-lg",
+                            "pointer-events-none absolute inset-0 -z-2 rounded-full blur-lg",
                             navGlowRing[item.id] ?? "shadow-[0_10px_30px_-12px_rgba(59,130,246,0.6)]",
                           )}
                         />
@@ -179,6 +189,7 @@ export function TopHeader() {
                   variant="ghost"
                   size="icon"
                   className="relative h-10 w-10 rounded-full border border-border/50"
+                  onClick={openNotifications}
                 >
                   <Bell className="h-4 w-4" />
                   <span className="absolute right-1 top-1 flex h-2.5 w-2.5 rounded-full bg-amber-500">
@@ -226,6 +237,7 @@ export function TopHeader() {
         </div>
       </div>
       </div>
+      <NotificationsModal open={notificationsOpen} onCloseAction={closeNotifications} />
     </TooltipProvider>
   );
 }

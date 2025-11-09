@@ -15,11 +15,21 @@ const variants = {
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
 
   const handleToggle = React.useCallback(() => {
+    if (!mounted) {
+      return;
+    }
+
     setTheme(isDark ? "light" : "dark");
-  }, [isDark, setTheme]);
+  }, [isDark, mounted, setTheme]);
 
   return (
     <Button
@@ -31,30 +41,36 @@ export function ThemeToggle() {
       className="relative h-10 w-10 overflow-hidden rounded-full border-[1.5px]"
     >
       <AnimatePresence mode="wait" initial={false}>
-        {isDark ? (
-          <motion.span
-            key="moon"
-            variants={variants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.2 }}
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <MoonStar className="h-5 w-5" />
-          </motion.span>
+        {mounted ? (
+          isDark ? (
+            <motion.span
+              key="moon"
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <MoonStar className="h-5 w-5" />
+            </motion.span>
+          ) : (
+            <motion.span
+              key="sun"
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <SunMedium className="h-5 w-5" />
+            </motion.span>
+          )
         ) : (
-          <motion.span
-            key="sun"
-            variants={variants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.2 }}
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <SunMedium className="h-5 w-5" />
-          </motion.span>
+          <span className="absolute inset-0 flex items-center justify-center">
+            <SunMedium className="h-5 w-5 opacity-0" />
+          </span>
         )}
       </AnimatePresence>
     </Button>
