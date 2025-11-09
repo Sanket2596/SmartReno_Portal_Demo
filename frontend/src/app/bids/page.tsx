@@ -1,6 +1,7 @@
 import bidsData from "@/data/bids.json";
 import { TopHeader } from "@/components/dashboard/top-header";
-import { BidsTable, type BidsTableData } from "@/components/bids/bids-table";
+import { BidsTable } from "@/components/bids/bids-table";
+import type { BidsTableData } from "@/components/bids/types";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
