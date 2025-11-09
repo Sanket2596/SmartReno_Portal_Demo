@@ -11,6 +11,8 @@
     "build": "npm run build --prefix frontend",
     "start": "npm run start --prefix frontend",
     "lint": "npm run lint --prefix frontend"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.34.5"
   }
 }
-
