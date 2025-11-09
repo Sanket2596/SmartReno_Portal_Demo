@@ -230,6 +230,7 @@ export function TopHeader() {
                   variant="ghost"
                   size="icon"
                   className="relative h-10 w-10 rounded-full border border-border/50"
+                  onClick={() => router.push("/messages")}
                 >
                   <MessageCircle className="h-4 w-4" />
                   <span className="absolute right-1 top-1 flex h-2.5 w-2.5 rounded-full bg-primary">

@@ -164,69 +164,88 @@
     ],
     "filters": {
       "searchPlaceholder": "Search by homeowner name or project type...",
-      "statusOptions": ["All Status", "Synced", "Failed", "Pending"],
+      "statusOptions": ["All Status", "Due Soon", "Open for Bids", "Closed"],
       "defaultStatus": "All Status"
     },
+    "bestMatches": [
+      {
+        "id": "best-kitchen-brooklyn",
+        "title": "Kitchen Remodel – Brooklyn, NY",
+        "location": "Brooklyn, NY",
+        "budgetMin": 19000,
+        "budgetMax": 24000,
+        "postedAgo": "3 days ago",
+        "description": "Full kitchen remodel for a 1930s brownstone. Includes demolition, installation of shaker cabinets, quartz countertops, under-cabinet lighting, subway tile backsplash, and stainless-steel appliance hookups. Requires minor electrical rewiring.",
+        "categories": ["Cabinetry", "Electrical", "Tiling", "Painting", "Appliance Install"],
+        "bidsSummary": "Less than 5 bids",
+        "status": "open"
+      },
+      {
+        "id": "best-bathroom-jersey-city",
+        "title": "Bathroom Renovation – Jersey City, NJ",
+        "location": "Jersey City, NJ",
+        "budgetMin": 8000,
+        "budgetMax": 12000,
+        "postedAgo": "1 week ago",
+        "description": "Complete bathroom renovation in a modern condo. Includes new vanity, toilet, shower tiling, and fixtures. Requires plumbing for shower and sink plus waterproof vinyl flooring.",
+        "categories": ["Plumbing", "Tiling", "Vanity Install", "Fixture Install"],
+        "bidsSummary": "Between 5 to 10 bids",
+        "status": "closing"
+      },
+      {
+        "id": "best-bath-hoboken",
+        "title": "Full Bath Remodel – Hoboken, NJ",
+        "location": "Hoboken, NJ",
+        "budgetMin": 9000,
+        "budgetMax": 14000,
+        "postedAgo": "2 weeks ago",
+        "description": "Full bath renovation in a modern apartment. Includes new toilet, shower, and fixtures. Requires plumbing for shower and sink, ventilation upgrade, and tile installation.",
+        "categories": ["Plumbing", "Tiling", "Vanity", "Fixture Installation", "Demolition"],
+        "bidsSummary": "More than 12 bids",
+        "status": "closed"
+      }
+    ],
     "projects": [
       {
-        "id": "project-john-smith",
-        "homeowner": "John Smith",
-        "projectType": "Kitchen Renovation",
-        "status": "synced",
-        "budget": 45000,
-        "createdAt": "Sept 15, 2025",
-        "lastSyncedAt": "Sept 30, 2025",
-        "location": "123 Main St, Springfield, IL"
+        "id": "project-bathroom-renovation",
+        "title": "Bathroom Renovation",
+        "category": "New Jersey",
+        "status": "due-soon",
+        "estimate": 10000,
+        "estimateLabel": "est",
+        "location": "New Jersey",
+        "timeline": "Due in 2 days",
+        "description": "Shower enclosure, new vanity, updated fixtures.",
+        "highlights": ["Tile replacement", "Lighting upgrade", "Fixture installation"],
+        "primaryActionLabel": "View Details",
+        "secondaryActionLabel": "Submit Proposal"
       },
       {
-        "id": "project-jamie-oliver",
-        "homeowner": "Jamie Oliver",
-        "projectType": "Basement Remodel",
-        "status": "failed",
-        "budget": 30000,
-        "createdAt": "Aug 1, 2025",
-        "lastSyncedAt": "Sept 10, 2025",
-        "location": "789 Pine St, Springfield, IL"
+        "id": "project-kitchen-remodel",
+        "title": "Kitchen Remodel",
+        "category": "New York Metro",
+        "status": "open-bids",
+        "estimate": 8500,
+        "estimateLabel": "est",
+        "location": "New York Metro",
+        "timeline": "Due in 3 days",
+        "description": "HVAC relocation, countertop replacement, minor plumbing.",
+        "highlights": ["Countertop install", "HVAC relocation", "Plumbing prep"],
+        "primaryActionLabel": "View Estimate",
+        "secondaryActionLabel": "Submit Bid"
       },
       {
-        "id": "project-ricardo-diaz",
-        "homeowner": "Ricardo Diaz",
-        "projectType": "Garage Conversion",
-        "status": "synced",
-        "budget": 32000,
-        "createdAt": "April 1, 2025",
-        "lastSyncedAt": "Sept 20, 2025",
-        "location": "456 Oak Ave, Gotham, NJ"
-      },
-      {
-        "id": "project-jane-doe",
-        "homeowner": "Jane Doe",
-        "projectType": "Deck Installation",
-        "status": "failed",
-        "budget": 12000,
-        "createdAt": "July 4, 2025",
-        "lastSyncedAt": "Oct 10, 2025",
-        "location": "231 Lake View Rd, Buffalo, NY"
-      },
-      {
-        "id": "project-robert-garcia",
-        "homeowner": "Robert Garcia",
-        "projectType": "Bathroom Addition",
-        "status": "pending",
-        "budget": 22000,
-        "createdAt": "Oct 2, 2025",
-        "lastSyncedAt": "Oct 15, 2025",
-        "location": "784 Elm St, Syracuse, NY"
-      },
-      {
-        "id": "project-alicia-keys",
-        "homeowner": "Alicia Keys",
-        "projectType": "Basement Remodel",
-        "status": "pending",
-        "budget": 12500,
-        "createdAt": "Jan 10, 2026",
-        "lastSyncedAt": "Feb 1, 2026",
-        "location": "98 Cedar Ave, Newark, NJ"
+        "id": "project-living-room-extension",
+        "title": "Living Room Extension",
+        "category": "New York Metro",
+        "status": "closed",
+        "estimate": 95000,
+        "estimateLabel": "budget",
+        "location": "New York Metro",
+        "timeline": "Completed",
+        "description": "HVAC relocation, countertop replacement, minor plumbing.",
+        "highlights": ["Framing complete", "Inspection passed", "Punch list ready"],
+        "primaryActionLabel": "View Project"
       }
     ]
   }

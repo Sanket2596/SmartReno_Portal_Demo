@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { CalendarModal } from "@/components/dashboard/calendar-modal";
 
-type ScheduleItem = {
+export type ScheduleItem = {
   id: string;
   title: string;
   datetime: string;
@@ -40,6 +41,8 @@ function formatEventDate(dateISO: string) {
 }
 
 export function SidebarPanels({ schedule, messages }: SidebarPanelsProps) {
+  const [calendarOpen, setCalendarOpen] = React.useState(false);
+
   return (
     <div className="flex flex-col gap-6">
       <Card className="rounded-[24px] border border-border/70 bg-card/90 shadow-sm dark:border-border/50 dark:bg-card/80">
@@ -49,7 +52,12 @@ export function SidebarPanels({ schedule, messages }: SidebarPanelsProps) {
               <CalendarDays className="h-5 w-5 text-primary" />
               Upcoming Schedule
             </div>
-            <Button variant="ghost" size="sm" className="h-8 rounded-full text-xs font-semibold">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 rounded-full text-xs font-semibold"
+              onClick={() => setCalendarOpen(true)}
+            >
               View Calendar
             </Button>
           </div>
@@ -124,6 +132,12 @@ export function SidebarPanels({ schedule, messages }: SidebarPanelsProps) {
           </div>
         </CardContent>
       </Card>
+
+      <CalendarModal
+        open={calendarOpen}
+        onCloseAction={() => setCalendarOpen(false)}
+        schedule={schedule}
+      />
     </div>
   );
 }

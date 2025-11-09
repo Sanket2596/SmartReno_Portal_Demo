@@ -37,7 +37,7 @@ export default async function Home() {
         <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
           <div className="space-y-6">
             <ActionsPanel actions={actions} />
-            <ProjectsSection data={projectsData} />
+          <ProjectsSection data={projectsData} showControls={false} />
           </div>
           <SidebarPanels schedule={schedule} messages={messages} />
         </div>

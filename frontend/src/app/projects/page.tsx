@@ -12,7 +12,10 @@ export default async function ProjectsPage() {
     redirect("/sign-in");
   }
 
-  const projectsData = dashboardData.projectsSection as ProjectsSectionData;
+  const projectsData: ProjectsSectionData = {
+    ...(dashboardData.projectsSection as ProjectsSectionData),
+    activeTab: "best-matches",
+  };
 
   return (
     <div className="relative min-h-screen bg-linear-to-br from-background via-background/95 to-muted/50">
