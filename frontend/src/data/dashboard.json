@@ -145,34 +145,90 @@
       "relativeTime": "1d ago"
     }
   ],
-  "projects": [
-    {
-      "id": "project-bathroom",
-      "title": "Bathroom Renovation",
-      "status": "Due Soon",
-      "region": "New Jersey",
-      "budget": 10000,
-      "due": "Due in 2 days",
-      "description": "Shower enclosure, new vanity, updated fixtures"
+  "projectsSection": {
+    "title": "Projects for you",
+    "subtitle": "Review CMS sync health and manage the projects that need your attention.",
+    "tabs": [
+      { "id": "best-matches", "label": "Best Matches" },
+      { "id": "latest-projects", "label": "Latest Projects" },
+      { "id": "my-projects", "label": "My Projects" }
+    ],
+    "activeTab": "my-projects",
+    "summaries": [
+      { "id": "total-projects", "label": "Total projects", "value": 20, "suffix": "projects" },
+      { "id": "completed-projects", "label": "Completed Projects", "value": 10, "suffix": "projects" },
+      { "id": "active-projects", "label": "Active Projects", "value": 10, "suffix": "projects" },
+      { "id": "cms-synced", "label": "CMS Synced Projects", "value": 11, "suffix": "projects" },
+      { "id": "failed-sync", "label": "Failed Sync", "value": 4, "suffix": "projects" },
+      { "id": "pending-sync", "label": "Pending Sync", "value": 5, "suffix": "projects" }
+    ],
+    "filters": {
+      "searchPlaceholder": "Search by homeowner name or project type...",
+      "statusOptions": ["All Status", "Synced", "Failed", "Pending"],
+      "defaultStatus": "All Status"
     },
-    {
-      "id": "project-kitchen",
-      "title": "Kitchen Remodel",
-      "status": "Open For Bids",
-      "region": "New York Metro",
-      "budget": 8500,
-      "due": "Due in 3 days",
-      "description": "HVAC relocation, countertop replacement, minor plumbing"
-    },
-    {
-      "id": "project-living-room",
-      "title": "Living Room Extension",
-      "status": "Completed",
-      "region": "New York Metro",
-      "budget": 95000,
-      "due": "Completed",
-      "description": "HVAC relocation, countertop replacement, minor plumbing"
-    }
-  ]
+    "projects": [
+      {
+        "id": "project-john-smith",
+        "homeowner": "John Smith",
+        "projectType": "Kitchen Renovation",
+        "status": "synced",
+        "budget": 45000,
+        "createdAt": "Sept 15, 2025",
+        "lastSyncedAt": "Sept 30, 2025",
+        "location": "123 Main St, Springfield, IL"
+      },
+      {
+        "id": "project-jamie-oliver",
+        "homeowner": "Jamie Oliver",
+        "projectType": "Basement Remodel",
+        "status": "failed",
+        "budget": 30000,
+        "createdAt": "Aug 1, 2025",
+        "lastSyncedAt": "Sept 10, 2025",
+        "location": "789 Pine St, Springfield, IL"
+      },
+      {
+        "id": "project-ricardo-diaz",
+        "homeowner": "Ricardo Diaz",
+        "projectType": "Garage Conversion",
+        "status": "synced",
+        "budget": 32000,
+        "createdAt": "April 1, 2025",
+        "lastSyncedAt": "Sept 20, 2025",
+        "location": "456 Oak Ave, Gotham, NJ"
+      },
+      {
+        "id": "project-jane-doe",
+        "homeowner": "Jane Doe",
+        "projectType": "Deck Installation",
+        "status": "failed",
+        "budget": 12000,
+        "createdAt": "July 4, 2025",
+        "lastSyncedAt": "Oct 10, 2025",
+        "location": "231 Lake View Rd, Buffalo, NY"
+      },
+      {
+        "id": "project-robert-garcia",
+        "homeowner": "Robert Garcia",
+        "projectType": "Bathroom Addition",
+        "status": "pending",
+        "budget": 22000,
+        "createdAt": "Oct 2, 2025",
+        "lastSyncedAt": "Oct 15, 2025",
+        "location": "784 Elm St, Syracuse, NY"
+      },
+      {
+        "id": "project-alicia-keys",
+        "homeowner": "Alicia Keys",
+        "projectType": "Basement Remodel",
+        "status": "pending",
+        "budget": 12500,
+        "createdAt": "Jan 10, 2026",
+        "lastSyncedAt": "Feb 1, 2026",
+        "location": "98 Cedar Ave, Newark, NJ"
+      }
+    ]
+  }
 }
 

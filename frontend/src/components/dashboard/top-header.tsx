@@ -35,10 +35,18 @@ import {
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { usePathname, useRouter } from "next/navigation";
 
-const navItems = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "projects", label: "Projects", icon: Briefcase },
+type NavItem = {
+  id: string;
+  label: string;
+  icon: typeof LayoutDashboard;
+  href?: string;
+};
+
+const navItems: NavItem[] = [
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, href: "/" },
+  { id: "projects", label: "Projects", icon: Briefcase, href: "/projects" },
   { id: "bids", label: "Bids", icon: FileText },
   { id: "calendar", label: "Calendar", icon: CalendarDays },
 ];
@@ -71,8 +79,40 @@ const navGlowRing: Record<string, string> = {
 };
 
 export function TopHeader() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [activeNav, setActiveNav] = React.useState("dashboard");
   const [notificationsOpen, setNotificationsOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const matchedNav = navItems.find((item) => {
+      if (!item.href) {
+        return false;
+      }
+
+      if (item.href === "/") {
+        return pathname === item.href;
+      }
+
+      return pathname.startsWith(item.href);
+    });
+
+    if (matchedNav) {
+      setActiveNav(matchedNav.id);
+    } else {
+      setActiveNav("dashboard");
+    }
+  }, [pathname]);
+
+  const handleNavClick = React.useCallback(
+    (item: NavItem) => {
+      if (item.href) {
+        router.push(item.href);
+      }
+      setActiveNav(item.id);
+    },
+    [router],
+  );
 
   const openNotifications = React.useCallback(() => {
     setNotificationsOpen(true);
@@ -103,7 +143,7 @@ export function TopHeader() {
                     key={item.id}
                     type="button"
                     variant="ghost"
-                    onClick={() => setActiveNav(item.id)}
+                    onClick={() => handleNavClick(item)}
                     className={cn(
                       "relative flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] transition-all",
                       isActive
