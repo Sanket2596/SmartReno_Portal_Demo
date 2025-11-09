@@ -32,8 +32,19 @@ npm run start    # Start production server locally (after build)
    - **Build Command**: leave as `npm run build`.
    - **Install Command**: leave as `npm install`.
    - **Output Directory**: leave blank (Next.js manages this).
-4. If you add environment variables locally, replicate them under **Settings → Environment Variables** in Vercel.
+4. Add required environment variables (see below) and replicate them under **Settings → Environment Variables** in Vercel.
 5. Trigger the deployment – Vercel will install dependencies, run the build from the `frontend` app, and serve the output globally.
+
+### Required environment variables
+
+Create a `.env.local` file in `frontend/` with the following keys and values from your Clerk dashboard:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_or_test_...
+CLERK_SECRET_KEY=sk_live_or_test_...
+```
+
+These must also be defined in Vercel (all environments that run the build). Without them the build will fail during prerendering.
 
 ## Troubleshooting
 
