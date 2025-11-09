@@ -1,0 +1,178 @@
+{
+  "summary": {
+    "greeting": {
+      "userName": "John Doe",
+      "periodLabel": "September 2025"
+    },
+    "metrics": [
+      {
+        "id": "total-projects",
+        "label": "Total projects",
+        "value": 20,
+        "unit": "projects",
+        "trend": {
+          "value": 15,
+          "direction": "up"
+        }
+      },
+      {
+        "id": "payments",
+        "label": "Payments",
+        "value": 20000,
+        "unit": "USD",
+        "trend": {
+          "value": -11.5,
+          "direction": "down"
+        },
+        "goal": 125000
+      },
+      {
+        "id": "rfp",
+        "label": "Requests for Proposals",
+        "value": 20,
+        "unit": "requests",
+        "trend": {
+          "value": 0,
+          "direction": "flat"
+        }
+      },
+      {
+        "id": "successful-bids",
+        "label": "Successful Bids",
+        "value": 10,
+        "unit": "accepted bids",
+        "trend": {
+          "value": 0,
+          "direction": "flat"
+        },
+        "total": 100
+      }
+    ],
+    "actionRecommendation": {
+      "pendingActions": 4,
+      "label": "See All Actions",
+      "description": "Recommended with AI",
+      "badge": "Real-time update"
+    }
+  },
+  "timeframes": ["Daily", "Weekly", "Monthly"],
+  "actions": [
+    {
+      "id": "A134",
+      "type": "urgent",
+      "title": "Submit your bid for Project #A134",
+      "subtitle": "Kitchen Remodel, Roof Replacement",
+      "actionLabel": "Submit proposal"
+    },
+    {
+      "id": "B210",
+      "type": "review",
+      "title": "Review estimator notes for Project #B210",
+      "subtitle": "Roof Replacement",
+      "actionLabel": "View Estimate"
+    },
+    {
+      "id": "LEAD-NEW",
+      "type": "lead",
+      "title": "New lead: Bathroom renovation",
+      "subtitle": "3 photos uploaded by homeowner",
+      "actionLabel": "View Lead"
+    },
+    {
+      "id": "MSG-JOHN",
+      "type": "message",
+      "title": "Homeowner John sent a message about flooring options.",
+      "subtitle": "I have compiled some flooring options. Here is .....",
+      "actionLabel": "Open Chat"
+    },
+    {
+      "id": "D405",
+      "type": "payment",
+      "title": "Payment request ready for Project #D405",
+      "subtitle": "Bathroom Remodel",
+      "actionLabel": "Send Invoice"
+    }
+  ],
+  "schedule": [
+    {
+      "id": "event-1",
+      "title": "Kitchen Remodel",
+      "datetime": "2025-10-09T09:00:00-04:00",
+      "location": "123 Main Street, Apt 4, New York, NY 10001"
+    },
+    {
+      "id": "event-2",
+      "title": "Estimator Update",
+      "datetime": "2025-10-09T13:00:00-04:00",
+      "location": "Google Meet"
+    },
+    {
+      "id": "event-3",
+      "title": "Site Visit",
+      "datetime": "2025-10-10T11:00:00-04:00",
+      "location": "123 Main Street, Apt 4, New York, NY 10001"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1",
+      "name": "Jake Wilson",
+      "preview": "Hi, I have a question...",
+      "relativeTime": "2hrs ago"
+    },
+    {
+      "id": "msg-2",
+      "name": "Clay Sanchez",
+      "preview": "I can make to the site...",
+      "relativeTime": "5hrs ago"
+    },
+    {
+      "id": "msg-3",
+      "name": "Anna Smith",
+      "preview": "Thanks for the update",
+      "relativeTime": "8hrs ago"
+    },
+    {
+      "id": "msg-4",
+      "name": "Mike Johnson",
+      "preview": "Please send over the...",
+      "relativeTime": "1d ago"
+    },
+    {
+      "id": "msg-5",
+      "name": "James Rodriguez",
+      "preview": "Hi, I have a question...",
+      "relativeTime": "1d ago"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-bathroom",
+      "title": "Bathroom Renovation",
+      "status": "Due Soon",
+      "region": "New Jersey",
+      "budget": 10000,
+      "due": "Due in 2 days",
+      "description": "Shower enclosure, new vanity, updated fixtures"
+    },
+    {
+      "id": "project-kitchen",
+      "title": "Kitchen Remodel",
+      "status": "Open For Bids",
+      "region": "New York Metro",
+      "budget": 8500,
+      "due": "Due in 3 days",
+      "description": "HVAC relocation, countertop replacement, minor plumbing"
+    },
+    {
+      "id": "project-living-room",
+      "title": "Living Room Extension",
+      "status": "Completed",
+      "region": "New York Metro",
+      "budget": 95000,
+      "due": "Completed",
+      "description": "HVAC relocation, countertop replacement, minor plumbing"
+    }
+  ]
+}
+
