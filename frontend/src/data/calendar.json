@@ -1,0 +1,42 @@
+{
+  "title": "My Calendar",
+  "month": 10,
+  "year": 2025,
+  "highlightDate": "2025-10-11",
+  "syncedProviders": ["Google Calendar"],
+  "events": [
+    {
+      "id": "day-off-sept-28",
+      "date": "2025-09-28",
+      "title": "Day Off",
+      "type": "time-off"
+    },
+    {
+      "id": "kitchen-remodel-event",
+      "date": "2025-10-14",
+      "title": "Kitchen Remodel",
+      "type": "project",
+      "time": "10:00 AM – 4:00 PM",
+      "address": "123 Main St, Springfield, IL",
+      "projectOwner": "John Doe"
+    },
+    {
+      "id": "site-visit-event",
+      "date": "2025-10-03",
+      "title": "Site Visit — Brownstone",
+      "type": "appointment",
+      "time": "9:00 AM",
+      "address": "214 Greenpoint Ave, Brooklyn, NY",
+      "projectOwner": "Sarah Williams"
+    },
+    {
+      "id": "proposal-due",
+      "date": "2025-10-09",
+      "title": "Proposal Follow-up",
+      "type": "reminder",
+      "time": "2:30 PM",
+      "projectOwner": "Michael Smith"
+    }
+  ]
+}
+

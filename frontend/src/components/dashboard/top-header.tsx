@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, href: "/" },
   { id: "projects", label: "Projects", icon: Briefcase, href: "/projects" },
   { id: "bids", label: "Bids", icon: FileText, href: "/bids" },
-  { id: "calendar", label: "Calendar", icon: CalendarDays },
+  { id: "calendar", label: "Calendar", icon: CalendarDays, href: "/calendar" },
 ];
 
 const navHighlightTransition: Transition = {
