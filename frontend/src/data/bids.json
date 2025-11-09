@@ -1,0 +1,221 @@
+{
+  "title": "My Bids",
+  "subtitle": "Track the status of your recent project bids and follow up where needed.",
+  "columns": [
+    { "id": "project", "label": "Project" },
+    { "id": "bidAmount", "label": "Bid Amount" },
+    { "id": "status", "label": "Status" },
+    { "id": "submittedOn", "label": "Submitted On" },
+    { "id": "lastUpdate", "label": "Last Update" },
+    { "id": "actions", "label": "Actions" }
+  ],
+  "bids": [
+    {
+      "id": "bid-kitchen-brooklyn",
+      "project": "Kitchen Remodel – Brooklyn",
+      "bidAmount": 18900,
+      "status": "shortlisted",
+      "submittedOn": "2025-09-15",
+      "lastUpdate": "2025-10-01",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Emma Johnson",
+        "location": "Brooklyn, NY",
+        "scope": [
+          "Custom cabinetry installation",
+          "Quartz countertop fabrication",
+          "Backsplash tiling and appliance hookups"
+        ],
+        "contactEmail": "emma.johnson@email.com",
+        "contactPhone": "(347) 555-0214",
+        "notes": "Client reviewing final cabinet elevations. Follow up on measurement verification."
+      }
+    },
+    {
+      "id": "bid-bathroom-hoboken",
+      "project": "Bathroom Upgrade – Hoboken",
+      "bidAmount": 11200,
+      "status": "declined",
+      "submittedOn": "2025-09-10",
+      "lastUpdate": "2025-09-25",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Anthony Rivera",
+        "location": "Hoboken, NJ",
+        "scope": [
+          "Install walk-in shower with frameless glass",
+          "Upgrade vanity and fixtures",
+          "Replace flooring with porcelain tile"
+        ],
+        "contactEmail": "anthony.rivera@email.com",
+        "notes": "Homeowner chose alternate vendor due to expedited lead time."
+      }
+    },
+    {
+      "id": "bid-basement-queens",
+      "project": "Basement Finishing – Queens",
+      "bidAmount": 27500,
+      "status": "under-review",
+      "submittedOn": "2025-09-22",
+      "lastUpdate": "2025-10-03",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Priya Patel",
+        "location": "Queens, NY",
+        "scope": [
+          "Frame and drywall 800 sq ft basement",
+          "Install LVP flooring and recessed lighting",
+          "Add half bath with vented plumbing"
+        ],
+        "contactEmail": "priya.patel@email.com",
+        "contactPhone": "(718) 555-0186",
+        "notes": "City permit under review. Client expects response by Oct 12."
+      }
+    },
+    {
+      "id": "bid-roof-jersey-city",
+      "project": "Roof Repair – Jersey City",
+      "bidAmount": 14000,
+      "status": "awarded",
+      "submittedOn": "2025-09-08",
+      "lastUpdate": "2025-09-20",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Carlos Mendes",
+        "location": "Jersey City, NJ",
+        "scope": [
+          "Replace damaged shingles and flashing",
+          "Install ice shield and ridge ventilation",
+          "Inspect gutters and downspouts"
+        ],
+        "contactEmail": "carlos.mendes@email.com",
+        "contactPhone": "(201) 555-0332",
+        "notes": "Contract signed. Tentative install date Oct 16, weather permitting."
+      }
+    },
+    {
+      "id": "bid-deck-staten-island",
+      "project": "Deck Extension – Staten Island",
+      "bidAmount": 17300,
+      "status": "submitted",
+      "submittedOn": "2025-10-02",
+      "lastUpdate": null,
+      "actions": ["edit", "view"],
+      "details": {
+        "homeowner": "Lena Ortiz",
+        "location": "Staten Island, NY",
+        "scope": [
+          "Add 200 sq ft composite deck extension",
+          "Install cable railing system",
+          "Integrate low-voltage deck lighting"
+        ],
+        "contactEmail": "lena.ortiz@email.com",
+        "contactPhone": "(929) 555-0417",
+        "notes": "Awaiting HOA approval. Recheck requirements on Oct 8."
+      }
+    },
+    {
+      "id": "bid-electrical-newark",
+      "project": "Electrical Upgrade – Newark",
+      "bidAmount": 5800,
+      "status": "under-review",
+      "submittedOn": "2025-09-30",
+      "lastUpdate": "2025-10-04",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Marcus Allen",
+        "location": "Newark, NJ",
+        "scope": [
+          "Upgrade panel to 200-amp service",
+          "Add dedicated circuits for appliances",
+          "Install whole-home surge protection"
+        ],
+        "contactEmail": "marcus.allen@email.com",
+        "notes": "Client requested revised quote with generator hookup option."
+      }
+    },
+    {
+      "id": "bid-basement-bronx",
+      "project": "Basement Waterproofing – Bronx",
+      "bidAmount": 9200,
+      "status": "declined",
+      "submittedOn": "2025-09-20",
+      "lastUpdate": "2025-09-30",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Stephanie Wu",
+        "location": "Bronx, NY",
+        "scope": [
+          "Install interior French drain system",
+          "Add sump pump with battery backup",
+          "Seal foundation cracks and apply vapor barrier"
+        ],
+        "contactEmail": "stephanie.wu@email.com",
+        "notes": "Client selected competitor offering bundled landscaping package."
+      }
+    },
+    {
+      "id": "bid-fence-long-island",
+      "project": "Fence Installation – Long Island",
+      "bidAmount": 6700,
+      "status": "shortlisted",
+      "submittedOn": "2025-09-25",
+      "lastUpdate": "2025-10-05",
+      "actions": ["edit", "view"],
+      "details": {
+        "homeowner": "Dylan Cooper",
+        "location": "Long Island, NY",
+        "scope": [
+          "Install 120 linear feet of cedar privacy fencing",
+          "Add two custom gates with black hardware",
+          "Stain and seal upon completion"
+        ],
+        "contactEmail": "dylan.cooper@email.com",
+        "contactPhone": "(516) 555-0170",
+        "notes": "Client asked for material samples. Drop off by Oct 7."
+      }
+    },
+    {
+      "id": "bid-kitchen-extension-jersey",
+      "project": "Kitchen Extension – Jersey City",
+      "bidAmount": 24500,
+      "status": "awarded",
+      "submittedOn": "2025-09-10",
+      "lastUpdate": "2025-09-28",
+      "actions": ["view"],
+      "details": {
+        "homeowner": "Maya Chen",
+        "location": "Jersey City, NJ",
+        "scope": [
+          "Expand kitchen footprint by 80 sq ft",
+          "Relocate plumbing and electrical",
+          "Install skylight and sliding patio doors"
+        ],
+        "contactEmail": "maya.chen@email.com",
+        "contactPhone": "(201) 555-0901",
+        "notes": "Permit approved. Structural engineer walk-through scheduled Oct 11."
+      }
+    },
+    {
+      "id": "bid-bathroom-remodel-manhattan",
+      "project": "Bathroom Remodel – Manhattan",
+      "bidAmount": 13400,
+      "status": "submitted",
+      "submittedOn": "2025-10-05",
+      "lastUpdate": null,
+      "actions": ["edit", "view"],
+      "details": {
+        "homeowner": "Olivia Martins",
+        "location": "Manhattan, NY",
+        "scope": [
+          "Convert tub to curbless shower with linear drain",
+          "Install heated flooring and floating vanity",
+          "Upgrade lighting to dimmable LED fixtures"
+        ],
+        "contactEmail": "olivia.martins@email.com",
+        "notes": "Client requested alternate tile selections. Send samples by Oct 9."
+      }
+    }
+  ]
+}
+
