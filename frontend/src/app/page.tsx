@@ -6,8 +6,16 @@ import { SidebarPanels } from "@/components/dashboard/sidebar-panels";
 import { ProjectsSection } from "@/components/dashboard/projects-section";
 import type { SummaryData } from "@/components/dashboard/summary-section";
 import type { ProjectsSectionData } from "@/components/dashboard/projects-section";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
   const {
     summary: summaryData,
     timeframes,

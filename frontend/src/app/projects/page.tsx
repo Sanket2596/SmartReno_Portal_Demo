@@ -2,8 +2,16 @@ import dashboardData from "@/data/dashboard.json";
 import { TopHeader } from "@/components/dashboard/top-header";
 import { ProjectsSection } from "@/components/dashboard/projects-section";
 import type { ProjectsSectionData } from "@/components/dashboard/projects-section";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
   const projectsData = dashboardData.projectsSection as ProjectsSectionData;
 
   return (
@@ -18,5 +26,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
-
 

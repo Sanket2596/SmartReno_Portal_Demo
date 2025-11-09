@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { SignOutButton, useUser } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
 
 type NavItem = {
@@ -79,10 +80,27 @@ const navGlowRing: Record<string, string> = {
 };
 
 export function TopHeader() {
+  const { user, isLoaded } = useUser();
   const router = useRouter();
   const pathname = usePathname();
   const [activeNav, setActiveNav] = React.useState("dashboard");
   const [notificationsOpen, setNotificationsOpen] = React.useState(false);
+
+  const userInitials = React.useMemo(() => {
+    if (!user) {
+      return "SR";
+    }
+
+    if (user.firstName || user.lastName) {
+      return `${user.firstName?.[0] ?? ""}${user.lastName?.[0] ?? ""}` || "SR";
+    }
+
+    if (user.username) {
+      return user.username.slice(0, 2).toUpperCase();
+    }
+
+    return "SR";
+  }, [user]);
 
   React.useEffect(() => {
     const matchedNav = navItems.find((item) => {
@@ -251,12 +269,21 @@ export function TopHeader() {
                   className="flex items-center gap-2 rounded-full border border-border/50 px-2 py-1"
                 >
                   <Avatar className="h-9 w-9 border border-border/70">
-                    <AvatarImage src="/avatar.png" alt="John Doe" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarImage
+                      src={user?.imageUrl ?? undefined}
+                      alt={user?.fullName ?? user?.username ?? "User"}
+                    />
+                    <AvatarFallback>
+                      {userInitials}
+                    </AvatarFallback>
                   </Avatar>
-                  <div className="hidden min-w-[96px] flex-col items-start text-left text-xs font-medium leading-tight md:flex">
-                    <span className="text-foreground">John Doe</span>
-                    <span className="text-muted-foreground">Architect</span>
+                  <div className="hidden min-w-[120px] flex-col items-start text-left text-xs font-medium leading-tight md:flex">
+                    <span className="text-foreground">
+                      {user?.fullName ?? user?.username ?? "Account"}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {user?.primaryEmailAddress?.emailAddress ?? "Team member"}
+                    </span>
                   </div>
                   <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </Button>
@@ -268,9 +295,11 @@ export function TopHeader() {
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuItem>Support</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">
-                  Sign out
-                </DropdownMenuItem>
+                <SignOutButton signOutOptions={{ redirectUrl: "/sign-in" }} redirectUrl="/sign-in">
+                  <DropdownMenuItem className="text-destructive">
+                    Sign out
+                  </DropdownMenuItem>
+                </SignOutButton>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
